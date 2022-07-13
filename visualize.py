@@ -10,9 +10,6 @@ import pandas
 from pathlib import Path
 
 def trend():
-    	
-    """ (102)(103): overall volume and sentiment on US core users. with state sentiment as inset """
-
     # visualize
     trend = pandas.read_csv('data/covid1-trend.csv', index_col=0)
     trend.index = pandas.to_datetime(trend.index).to_series().dt.date
@@ -73,8 +70,8 @@ def trend():
     fig.tight_layout()
     for ax in fig.axes:
         ax.spines['top'].set_visible(False)
-    fig.savefig('figures/covid1-trend.pdf', transparent=True, dpi=100)
-    fig.savefig('figures/covid1-trend.png', transparent=True, dpi=100)
+    fig.savefig('figures/covid1-trend.pdf', transparent=False, dpi=100)
+    fig.savefig('figures/covid1-trend.png', transparent=False, dpi=100)
     print('figures/covid1-trend.pdf')
 
 def rd():
@@ -138,8 +135,8 @@ def rd():
     fig.tight_layout()
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-    fig.savefig('figures/covid1-effect-rd.pdf', transparent=True, dpi=100)
-    fig.savefig('figures/covid1-effect-rd.png', transparent=True, dpi=100)
+    fig.savefig('figures/covid1-effect-rd.pdf', transparent=False, dpi=100)
+    fig.savefig('figures/covid1-effect-rd.png', transparent=False, dpi=100)
     print('figures/covid1-effect-rd.pdf')
 
 def did():
@@ -239,8 +236,8 @@ def did():
     fig.tight_layout()
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-    fig.savefig('figures/covid1-effect-did.pdf', transparent=True, dpi=100)
-    fig.savefig('figures/covid1-effect-did.png', transparent=True, dpi=100)
+    fig.savefig('figures/covid1-effect-did.pdf', transparent=False, dpi=100)
+    fig.savefig('figures/covid1-effect-did.png', transparent=False, dpi=100)
     print('figures/covid1-effect-did.pdf')
 
 if __name__ == '__main__':
